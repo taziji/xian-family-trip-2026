@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   basePath: isGitHubPages ? '/xian-family-trip-2026' : undefined,
   assetPrefix: isGitHubPages ? '/xian-family-trip-2026/' : undefined,
   trailingSlash: isGitHubPages,
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

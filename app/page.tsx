@@ -2,6 +2,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { days, getDayById, ticketPlan, ticketProgress } from './itinerary.mjs';
 import { heroTitle } from './branding.mjs';
+import Image from 'next/image';
+import heroArtwork from '../public/hero-kk.png';
 
 export default function Home() {
   const [activeDay, setActiveDay] = useState('arrival');
@@ -45,6 +47,11 @@ export default function Home() {
         <p>历史文化深度 × 经典景点 × 十岁友好</p>
       </div>
     </section>
+
+    <figure className="artwork-section" aria-labelledby="artwork-caption">
+      <Image src={heroArtwork} alt="和KK一起读一遍长安，西安亲子历史文化之旅" priority sizes="100vw" />
+      <figcaption id="artwork-caption">KK的西安亲子历史文化之旅 · 2026.10.23—10.28</figcaption>
+    </figure>
 
     <section className="route-section" id="route">
       <div className="section-heading"><p className="eyebrow">THE ROUTE</p><h2>六天，四个历史章节</h2><p>点击日期切换具体时间轴。</p></div>

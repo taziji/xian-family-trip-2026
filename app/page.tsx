@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { days, getDayById, ticketPlan, ticketProgress } from './itinerary.mjs';
+import { heroTitle } from './branding.mjs';
 
 export default function Home() {
   const [activeDay, setActiveDay] = useState('arrival');
@@ -31,7 +32,7 @@ export default function Home() {
     <section className="hero" id="top">
       <div className="hero-copy">
         <p className="eyebrow">2026.10.23 — 10.28 · 西安</p>
-        <h1>带着十岁少年<br/>读一遍<span>长安</span></h1>
+        <h1 aria-label={heroTitle}>和KK一起<br/>读一遍<span>长安</span></h1>
         <p className="hero-lead">从碑刻里的文字，到秦陵地下军阵；从盛唐灯火，到一口刚出炉的牛肉饼。四个完整白天，一条不赶路的历史主线。</p>
         <div className="hero-actions"><a className="primary-btn" href="#route">打开每日路线 <span>↓</span></a><a className="text-link" href="#tickets">先看抢票计划</a></div>
       </div>

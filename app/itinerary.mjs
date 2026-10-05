@@ -14,5 +14,30 @@ export const ticketPlan = [
   {id:'history-museum',date:'10.20 · 17:00',title:'陕西历史博物馆',detail:'抢10.25最早场，本馆',level:'critical'},
   {id:'wall',date:'10.22–23',title:'西安城墙',detail:'看天气后再买普通票',level:'later'}
 ];
+// Approximate WGS84 map positions for itinerary planning. Click a marker to open turn-by-turn navigation.
+export const mapStops = [
+  {id:'hotel',name:'西安永宁门大景城堡酒店',category:'住宿',lat:34.2412,lng:108.9447,dayIds:['arrival','beilin','museum','qin','food','departure'],order:0},
+  {id:'yongning-gate',name:'永宁门与护城河',category:'城墙',lat:34.2412,lng:108.9442,dayIds:['arrival','food'],order:1,orderByDay:{food:8}},
+  {id:'beilin',name:'西安碑林博物馆',category:'历史文化',lat:34.2533,lng:108.9533,dayIds:['beilin'],order:1},
+  {id:'shuyuanmen',name:'书院门',category:'街巷',lat:34.2529,lng:108.9495,dayIds:['beilin'],order:2},
+  {id:'guanzhong-academy',name:'关中书院',category:'历史文化',lat:34.2524,lng:108.9491,dayIds:['beilin'],order:3},
+  {id:'xiangzi-temple',name:'湘子庙街',category:'街巷',lat:34.2505,lng:108.9452,dayIds:['beilin'],order:4},
+  {id:'jiujiu-qin',name:'《赳赳大秦》演出剧场',category:'演出',lat:34.2507,lng:108.8239,dayIds:['beilin'],order:5},
+  {id:'shaanxi-history',name:'陕西历史博物馆',category:'博物馆',lat:34.2264,lng:108.9534,dayIds:['museum'],order:1},
+  {id:'daci-en-temple',name:'大慈恩寺',category:'历史文化',lat:34.2197,lng:108.9645,dayIds:['museum'],order:2},
+  {id:'big-wild-goose-pagoda',name:'大雁塔',category:'历史文化',lat:34.2186,lng:108.9647,dayIds:['museum'],order:3},
+  {id:'datang-everbright-city',name:'大唐不夜城',category:'夜游',lat:34.2128,lng:108.9655,dayIds:['museum'],order:4},
+  {id:'terracotta-warriors',name:'秦始皇帝陵博物院（兵马俑）',category:'秦陵',lat:34.3853,lng:109.2732,dayIds:['qin'],order:1},
+  {id:'lishan-garden',name:'秦始皇帝陵丽山园',category:'秦陵',lat:34.3704,lng:109.2543,dayIds:['qin'],order:2},
+  {id:'xiaonanmen-market',name:'小南门早市',category:'美食',lat:34.2493,lng:108.9382,dayIds:['food'],order:1},
+  {id:'sajinqiao',name:'洒金桥',category:'美食',lat:34.2675,lng:108.9375,dayIds:['food'],order:2},
+  {id:'guangren-temple',name:'广仁寺',category:'历史文化',lat:34.2685,lng:108.9336,dayIds:['food'],order:3},
+  {id:'daxuexi-lane',name:'大学习巷',category:'回坊街巷',lat:34.2628,lng:108.9389,dayIds:['food'],order:4},
+  {id:'xiaoxuexi-lane',name:'小学习巷',category:'回坊街巷',lat:34.2615,lng:108.9394,dayIds:['food'],order:5},
+  {id:'dapiyuan',name:'大皮院',category:'回坊美食',lat:34.2637,lng:108.9422,dayIds:['food'],order:6},
+  {id:'beiyuanmen',name:'北院门',category:'回坊街巷',lat:34.2619,lng:108.9416,dayIds:['food'],order:7},
+  {id:'hanguang-gate',name:'含光门遗址段',category:'城墙',lat:34.2458,lng:108.9395,dayIds:['food'],order:9},
+  {id:'southwest-corner',name:'西南城角',category:'城墙',lat:34.2445,lng:108.9328,dayIds:['food'],order:10}
+];
 export const getDayById = (id) => days.find((day) => day.id === id) ?? days[0];
 export const ticketProgress = (completed) => ({completed:completed.size,total:ticketPlan.length});

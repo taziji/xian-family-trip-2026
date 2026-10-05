@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { days, getDayById, ticketPlan, ticketProgress } from './itinerary.mjs';
 import { heroTitle } from './branding.mjs';
+import ItineraryMap from './ItineraryMap';
 import Image from 'next/image';
 import heroArtwork from '../public/hero-kk.png';
 
@@ -27,7 +28,7 @@ export default function Home() {
   return <main>
     <header className="topbar">
       <a className="brand" href="#top" aria-label="返回顶部"><span>长安</span><small>亲子行记</small></a>
-      <nav aria-label="页面导航"><a href="#route">每日行程</a><a href="#tickets">抢票日历</a><a href="#essentials">随身清单</a></nav>
+      <nav aria-label="页面导航"><a href="#map">行程地图</a><a href="#route">每日行程</a><a href="#tickets">抢票日历</a><a href="#essentials">随身清单</a></nav>
       <div className="trip-chip">2大1小 · 6天5晚</div>
     </header>
 
@@ -36,7 +37,7 @@ export default function Home() {
         <p className="eyebrow">2026.10.23 — 10.28 · 西安</p>
         <h1 aria-label={heroTitle}>和KK一起<br/>读一遍<span>长安</span></h1>
         <p className="hero-lead">从碑刻里的文字，到秦陵地下军阵；从盛唐灯火，到一口刚出炉的牛肉饼。四个完整白天，一条不赶路的历史主线。</p>
-        <div className="hero-actions"><a className="primary-btn" href="#route">打开每日路线 <span>↓</span></a><a className="text-link" href="#tickets">先看抢票计划</a></div>
+        <div className="hero-actions"><a className="primary-btn" href="#map">查看行程地图 <span>↓</span></a><a className="text-link" href="#route">浏览每日安排</a></div>
       </div>
       <div className="hero-card" aria-label="旅程概要">
         <div className="seal">西安</div>
@@ -52,6 +53,8 @@ export default function Home() {
       <Image src={heroArtwork} alt="和KK一起读一遍长安，西安亲子历史文化之旅" priority sizes="100vw" />
       <figcaption id="artwork-caption">KK的西安亲子历史文化之旅 · 2026.10.23—10.28</figcaption>
     </figure>
+
+    <ItineraryMap />
 
     <section className="route-section" id="route">
       <div className="section-heading"><p className="eyebrow">THE ROUTE</p><h2>六天，四个历史章节</h2><p>点击日期切换具体时间轴。</p></div>
